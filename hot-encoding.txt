@@ -1,0 +1,28 @@
+What is One Hot Encoding?
+A one hot encoding is a representation of categorical variables as binary vectors.
+
+This first requires that the categorical values be mapped to integer values.
+
+Then, each integer value is represented as a binary vector that is all zero values except the index of the integer, which is marked with a 1.
+
+Worked Example of a One Hot Encoding
+Let’s make this concrete with a worked example.
+
+Assume we have a sequence of labels with the values ‘red’ and ‘green’.
+
+We can assign ‘red’ an integer value of 0 and ‘green’ the integer value of 1. As long as we always assign these numbers to these labels, this is called an integer encoding. 
+Consistency is important so that we can invert the encoding later and get labels back from integer values, such as in the case of making a prediction.
+
+Next, we can create a binary vector to represent each integer value. The vector will have a length of 2 for the 2 possible integer values.
+
+The ‘red’ label encoded as a 0 will be represented with a binary vector [1, 0] where the zeroth index is marked with a value of 1. 
+In turn, the ‘green’ label encoded as a 1 will be represented with a binary vector [0, 1] where the first index is marked with a value of 1.
+If we had the sequence:
+
+['red', 'red', 'green']
+ [0,0,1]
+output will be :
+
+[1, 0]
+[1, 0]
+[0, 1]
